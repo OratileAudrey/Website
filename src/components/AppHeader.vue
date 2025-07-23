@@ -15,17 +15,13 @@
             <a href="#about" class="nav-link" @click="scrollToSection('about')">About</a>
           </li>
           <li class="nav-item">
-            <a href="#travel" class="nav-link" @click="scrollToSection('travel')">Travel</a>
-          </li>
-          <li class="nav-item">
-            <a href="#content" class="nav-link" @click="scrollToSection('content')">Content & Hobbies</a>
+            <router-link to="/travel" class="nav-link">Travel</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/fun-travels" class="nav-link">Fun Travels</router-link>
           </li>
-
           <li class="nav-item">
-            <a href="#contact" class="nav-link" @click="scrollToSection('contact')">Contact</a>
+            <router-link to="/contact" class="nav-link">Contact</router-link>
           </li>
         </ul>
 
@@ -45,16 +41,13 @@
               <a href="#about" class="mobile-nav-link" @click="scrollToSection('about')">About</a>
             </li>
             <li class="mobile-nav-item">
-              <a href="#travel" class="mobile-nav-link" @click="scrollToSection('travel')">Travel</a>
-            </li>
-            <li class="mobile-nav-item">
-              <a href="#content" class="mobile-nav-link" @click="scrollToSection('content')">Content & Hobbies</a>
+              <router-link to="/travel" class="mobile-nav-link" @click="closeMobileMenu">Travel</router-link>
             </li>
             <li class="mobile-nav-item">
               <router-link to="/fun-travels" class="mobile-nav-link" @click="closeMobileMenu">Fun Travels</router-link>
             </li>
             <li class="mobile-nav-item">
-              <a href="#contact" class="mobile-nav-link" @click="scrollToSection('contact')">Contact</a>
+              <router-link to="/contact" class="mobile-nav-link" @click="closeMobileMenu">Contact</router-link>
             </li>
           </ul>
         </nav>
@@ -65,9 +58,12 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const mobileMenuOpen = ref(false)
 const isScrolled = ref(false)
+const route = useRoute()
+const router = useRouter()
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
@@ -78,12 +74,16 @@ const closeMobileMenu = () => {
 }
 
 const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
+  if (route.path !== '/') {
+    router.push({ path: '/', hash: `#${sectionId}` })
+  } else {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
   }
   closeMobileMenu()
 }
@@ -117,10 +117,11 @@ onUnmounted(() => {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* Brand Section */
@@ -154,12 +155,13 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 2rem;
+  font-family: sans-serif;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
