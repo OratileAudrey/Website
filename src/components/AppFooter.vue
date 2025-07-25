@@ -61,7 +61,6 @@ const currentYear = computed<number>(() => new Date().getFullYear())
 
 <style scoped>
 .footer-bg {
-  /* background: linear-gradient(135deg, #712fae 0%, #961f5a 100%); */
   background: #8e2483;
 }
 </style>

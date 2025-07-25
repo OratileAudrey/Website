@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-screen h-[50vh] overflow-hidden">
+  <div class="relative w-screen h-[60vh] overflow-hidden">
     <!-- Video Background -->
     <video ref="videoRef" class="absolute top-0 left-0 w-screen h-full object-cover" autoplay muted loop playsinline
       preload="metadata" @loadeddata="onVideoLoaded">
@@ -11,10 +11,9 @@
   <section id="about">
     <AboutMe />
   </section>
-
-  <section id="content">
-
-  </section>
+  <!-- <section id="contact">
+    <ContactMe />
+  </section> -->
 </template>
 
 
@@ -28,10 +27,8 @@ const videoRef = ref<HTMLVideoElement | null>(null)
 // Handle video loaded event
 const onVideoLoaded = () => {
   console.log('Video loaded successfully')
-  // You can add any additional logic here when video loads
 }
 
-// Ensure video plays on component mount (some browsers require this)
 onMounted(() => {
   if (videoRef.value) {
     videoRef.value.play().catch((error) => {
