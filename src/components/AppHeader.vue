@@ -35,7 +35,7 @@
 
       <!-- Mobile menu overlay -->
       <div class="mobile-menu-overlay" :class="{ 'active': mobileMenuOpen }" @click="closeMobileMenu">
-        <nav class="mobile-nav">
+        <nav class="mobile-nav" @click.stop>
           <ul class="mobile-nav-list">
             <li class="mobile-nav-item">
               <a href="#about" class="mobile-nav-link" @click="scrollToSection('about')">About</a>
@@ -67,10 +67,12 @@ const router = useRouter()
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
+  console.log('Mobile menu toggled:', mobileMenuOpen.value)
 }
 
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false
+  console.log('Mobile menu closed')
 }
 
 const scrollToSection = (sectionId: string) => {
@@ -242,16 +244,19 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  z-index: 999;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
 }
 
 .mobile-menu-overlay.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav {
@@ -262,9 +267,11 @@ onUnmounted(() => {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   min-width: 280px;
-  border: 1px solid rgba(100, 116, 139, 0.2);
+  max-width: 90vw;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  z-index: 10000;
 }
 
 .mobile-nav-list {
@@ -314,6 +321,22 @@ onUnmounted(() => {
 
   .mobile-menu-btn {
     display: flex;
+  }
+
+  /* Mobile menu improvements */
+  .mobile-nav {
+    padding: 1.5rem;
+    min-width: 250px;
+    max-width: 85vw;
+  }
+
+  .mobile-nav-list {
+    gap: 1rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 1rem;
+    padding: 0.75rem 0.5rem;
   }
 }
 

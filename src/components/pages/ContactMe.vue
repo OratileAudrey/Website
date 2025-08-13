@@ -17,7 +17,7 @@
       <!-- Header -->
       <div class="text-center mb-16">
         <h1
-          class="text-3xl md:text-5xl bg-gradient-to-r from-blue-600 via-pink-600 to-indigo-700 bg-clip-text text-transparent mb-4 animate-fade-in">
+          class="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-pink-600 to-indigo-700 bg-clip-text text-transparent mb-4 animate-fade-in">
           Get in Touch
         </h1>
         <div class="w-24 h-1 bg-gradient-to-r from-blue-600 via-pink-600 to-indigo-700 mx-auto rounded-full"></div>
