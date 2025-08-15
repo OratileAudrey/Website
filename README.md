@@ -1,64 +1,34 @@
-# the-website
+# 🌍 My Personal Website
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the source code for my personal website — a space where I share stories about my life, travels, content creation, and my travel business.  
+The site features a clean, responsive design built with **Vue 3** and **Vite**, with smooth animations and interactive sections.
 
-## Recommended IDE Setup
+## ✨ Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- 📖 **About Me** — Overview of who I am and what I do.
+- 🏞 **Travel Gallery** — A collection of destinations I’ve visited with images and descriptions.
+- 📹 **Content Creation Section** — Showcasing my filming, editing, and creative work.
+- 📅 **Travel Planning Form** — Visitors can request help with trip ideas and itineraries.
+- 🎨 **Responsive Design** — Works seamlessly on desktop, tablet, and mobile.
+- ⚡ **Fast & Optimized** — Built with Vite for quick load times.
+- 📨 **Email Integration** — Contact form powered by [EmailJS](https://www.emailjs.com/).
+- 🗺 **Smooth Navigation** — Routing handled by Vue Router.
+- 🛠 **Scalable Structure** — Using Pinia for state management.
 
-## Type Support for `.vue` Imports in TS
+## 🛠 Tech Stack
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- [Vue 3](https://vuejs.org/) with `<script setup>` syntax
+- [Vite](https://vitejs.dev/) for fast builds
+- [TypeScript](https://www.typescriptlang.org/) for type safety
+- [Vue Router](https://router.vuejs.org/) for navigation
+- [Pinia](https://pinia.vuejs.org/) for state management
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [EmailJS](https://www.emailjs.com/) for contact form functionality
 
-## Customize configuration
+## 🚀 Getting Started
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+### 1️⃣ Install dependencies
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```

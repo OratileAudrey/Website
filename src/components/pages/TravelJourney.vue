@@ -61,7 +61,7 @@
             :class="{ 'animate-visible': isDestinationsVisible }" :style="{ animationDelay: `${index * 100}ms` }">
             <!-- Image container with overlay -->
             <div class="relative h-64 overflow-hidden">
-              <img :src="`/travel-pics/${place.image}`" :alt="place.title"
+              <img :src="`travel-pics/${place.image}`" :alt="place.title"
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
               <!-- Gradient overlay that appears on hover -->
