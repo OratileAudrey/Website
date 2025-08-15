@@ -114,7 +114,7 @@
         </div>
 
         <!-- Contact Info & Social -->
-        <div class="order-1 lg:order-2 space-y-8">
+        <div class="order-1 lg:order-2 space-y-6">
           <!-- Contact Methods -->
           <div
             class="relative bg-white/70 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/20 group">
@@ -175,7 +175,7 @@
             </div>
 
             <div class="relative z-10">
-              <div class="flex items-center justify-center mb-6">
+              <div class="flex items-center justify-center mb-4">
                 <div class="w-4 h-4 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full mr-3"></div>
                 <h3 class="text-xl font-bold text-gray-800">Follow My Journey</h3>
               </div>
@@ -183,7 +183,7 @@
               <div class="grid grid-cols-3 gap-4">
                 <!-- Instagram -->
                 <a href="https://www.instagram.com/oratile_audrey/" target="_blank"
-                  class="group flex flex-col items-center p-3 bg-white/50 rounded-2xl hover:bg-white/80 transition-all duration-300 transform hover:scale-105">
+                  class="group flex flex-col items-center p-2 bg-white/50 rounded-2xl hover:bg-white/80 transition-all duration-300 transform hover:scale-105">
                   <div
                     class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                     <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -197,7 +197,7 @@
 
                 <!-- TikTok -->
                 <a href="https://www.tiktok.com/@fun_travelss?_t=ZM-8yDI5xVf75i&_r=1" target="_blank"
-                  class="group flex flex-col items-center p-3 bg-white/50 rounded-2xl hover:bg-white/80 transition-all duration-300 transform hover:scale-105">
+                  class="group flex flex-col items-center p-2 bg-white/50 rounded-2xl hover:bg-white/80 transition-all duration-300 transform hover:scale-105">
                   <div
                     class="w-12 h-12 bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 border border-gray-500">
                     <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -211,7 +211,7 @@
 
                 <!-- YouTube -->
                 <a href="https://www.youtube.com/@oratileaudrey" target="_blank"
-                  class="group flex flex-col items-center p-3 bg-white/50 rounded-2xl hover:bg-white/80 transition-all duration-300 transform hover:scale-105">
+                  class="group flex flex-col items-center p-2 bg-white/50 rounded-2xl hover:bg-white/80 transition-all duration-300 transform hover:scale-105">
                   <div
                     class="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                     <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">

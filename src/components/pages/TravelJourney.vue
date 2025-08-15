@@ -38,7 +38,7 @@
             Travelling makes me fall in love with the world over and over again.
             There's something magical about seeing a place for the first time —
             especially when it's wrapped in nature's beauty. Being out there,
-            surrounded by mountains, waterfalls, or oceans, I feel free, grounded, and alive.
+            surrounded by mountains, waterfalls, or oceans, I just feel free and alive.
           </p>
         </div>
       </div>
@@ -48,11 +48,11 @@
     <section class="relative z-20 px-6 sm:px-12 bg-gradient-to-b from-white/80 to-slate-50/80 backdrop-blur-sm">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16 animate-fade-in-up" :class="{ 'animate-visible': isDestinationsVisible }">
-          <h2 class="text-4xl md:text-5xl text-gray-800 mb-6">Destination Highlights</h2>
+          <h2 class="text-4xl md:text-5xl text-gray-800 mb-4">Destination Highlights</h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Each place holds a special memory
           </p>
-          <div class="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-8"></div>
+          <div class="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-4"></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -135,6 +135,49 @@
       </div>
     </section>
 
+    <!-- Social Media & Content Section -->
+    <section class="relative z-20 px-6 sm:px-12 py-24 bg-gradient-to-b from-white/80 to-slate-100/80 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto">
+
+        <!-- Section Header -->
+        <div class="text-center mb-16 animate-fade-in-up" :class="{ 'animate-visible': isSocialVisible }">
+          <h2 class="text-3xl md:text-4xl text-gray-800 mb-6">Follow My Journey</h2>
+          <div class="w-32 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto rounded-full mt-8"></div>
+        </div>
+
+
+        <div class="mb-20">
+          <!-- YouTube Videos Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div v-for="(video, index) in youtubeVideos" :key="index"
+              class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white transform hover:-translate-y-2 animate-fade-in-up"
+              :class="{ 'animate-visible': isSocialVisible }" :style="{ animationDelay: `${(index + 1) * 200}ms` }">
+
+              <!-- Video Container -->
+              <div class="relative aspect-video">
+                <iframe :src="`https://www.youtube.com/embed/${video.id}?rel=0&modestbranding=1`" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen class="w-full h-full">
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- YouTube Channel CTA -->
+          <div class="text-center animate-fade-in-up animation-delay-600"
+            :class="{ 'animate-visible': isSocialVisible }">
+            <a :href="youtubeChannelUrl" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white font-medium rounded-full hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+              Subscribe to My Channel
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -223,7 +266,24 @@ const handleScroll = () => {
       }, 300)
     }
   }
+
+  const socialSection = document.querySelector('section:nth-of-type(4)') // Adjust number based on your sections
+  if (socialSection) {
+    const rect = socialSection.getBoundingClientRect()
+    isSocialVisible.value = rect.top < window.innerHeight * 0.8
+  }
 }
+const isSocialVisible = ref(false)
+const youtubeChannelUrl = 'https://www.youtube.com/@oratileaudrey'
+
+const youtubeVideos = [
+  {
+    id: 'wlKo4oDh_3c'
+  },
+  {
+    id: 'FazRrKSH8-Q?si=QFxm5CFmoRt3q5uq'
+  }
+]
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)

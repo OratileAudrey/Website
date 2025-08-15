@@ -70,11 +70,11 @@
           </div> -->
         </div>
 
-        <!-- Image Section (Right) with Enhanced Effects -->
+        <!-- Image Section (Right)-->
         <div class="image-container max-w-sm mx-auto lg:mx-0" :class="{ 'animate-fade-in-right': isVisible }">
           <div class="relative overflow-hidden rounded-2xl shadow-2xl group cursor-pointer"
             @mouseenter="imageHovered = true" @mouseleave="imageHovered = false">
-            <!-- Image with Parallax Effect -->
+            <!-- Image -->
             <div
               class="aspect-[3/4] bg-gradient-to-br from-purple-400 via-pink-400 to-orange-400 transition-transform duration-700 group-hover:scale-110"
               :class="{ 'transform rotate-1': imageHovered }">
@@ -101,24 +101,24 @@
       </div>
     </div>
 
-    <!-- Enhanced My Interests Section -->
+    <!-- My Interests Section -->
     <div class="max-w-7xl py-20 mx-auto relative z-10">
       <div class="text-center mb-16 mt-16" ref="interestsRef" :class="{ 'animate-fade-in-up': interestsVisible }">
-        <h2 class="text-3xl md:text-5xl text-gray-800 mb-4 font-bold">Interests</h2>
-        <div
-          class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full transition-all duration-500 hover:w-32">
-        </div>
-        <p class="text-xl text-gray-600 max-w-3xl mt-4 mx-auto">
+        <h2 class="text-3xl md:text-5xl text-gray-800 mb-4">Interests</h2>
+
+        <p class="text-xl text-gray-600 max-w-3xl mt- mx-auto">
           Some of the things I enjoy doing
         </p>
+        <div
+          class="w-24 h-1 mt-4 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full transition-all duration-500 hover:w-32">
+        </div>
       </div>
 
-      <!-- Enhanced Interests Grid -->
+      <!-- Interests Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         <div v-for="(interest, index) in interests" :key="index"
           class="interest-card bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-4 cursor-pointer border border-white/20 group"
-          :class="{ 'animate-fade-in-up': interestsVisible }" :style="{ animationDelay: (index * 150) + 'ms' }"
-          @mouseenter="playHoverSound">
+          :class="{ 'animate-fade-in-up': interestsVisible }" :style="{ animationDelay: (index * 150) + 'ms' }">
           <div
             class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110"
             :class="interest.gradientClass">
@@ -140,7 +140,7 @@
         </div>
       </div>
 
-      <!-- Enhanced Bottom CTA with Ripple Effect -->
+      <!-- Bottom CTA with Ripple Effect -->
       <div class="text-center">
         <div class="inline-flex space-x-4 relative">
           <div v-for="(dot, index) in 3" :key="index"
@@ -278,7 +278,7 @@ const interests = ref([
   {
     icon: BookIcon,
     title: 'Reading',
-    description: 'I turn to books for inspiration and growth. I enjoy real stories and ideas that challenge how I think. Some of my favorite authors include Dale Carnegie and Napoleon Hill.',
+    description: 'I turn to books for inspiration and growth. I enjoy real stories and ideas that challenge how I think. Some of my favourite authors include Dale Carnegie and Napoleon Hill.',
     gradientClass: 'bg-gradient-to-br from-pink-500 to-orange-400',
     progress: 70,
     progressColor: 'bg-gradient-to-r from-pink-500 to-orange-400'
@@ -311,11 +311,6 @@ const triggerRipple = (event: MouseEvent) => {
   setTimeout(() => {
     ripple.remove()
   }, 600)
-}
-
-const playHoverSound = () => {
-  // Create a subtle audio feedback (optional)
-  // You could play a small sound effect here
 }
 
 // Typing animation

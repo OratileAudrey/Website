@@ -32,28 +32,27 @@
           <span class="hamburger-line"></span>
         </button>
       </nav>
-
-      <!-- Mobile menu overlay -->
-      <div class="mobile-menu-overlay" :class="{ 'active': mobileMenuOpen }" @click="closeMobileMenu">
-        <nav class="mobile-nav" @click.stop>
-          <ul class="mobile-nav-list">
-            <li class="mobile-nav-item">
-              <a href="#about" class="mobile-nav-link" @click="scrollToSection('about')">About</a>
-            </li>
-            <li class="mobile-nav-item">
-              <router-link to="/travel" class="mobile-nav-link" @click="closeMobileMenu">Travel</router-link>
-            </li>
-            <li class="mobile-nav-item">
-              <router-link to="/fun-travels" class="mobile-nav-link" @click="closeMobileMenu">Fun Travels</router-link>
-            </li>
-            <li class="mobile-nav-item">
-              <router-link to="/contact" class="mobile-nav-link" @click="closeMobileMenu">Contact</router-link>
-            </li>
-          </ul>
-        </nav>
-      </div>
     </div>
   </header>
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu-overlay" :class="{ 'active': mobileMenuOpen }" @click="closeMobileMenu">
+    <nav class="mobile-nav" @click.stop>
+      <ul class="mobile-nav-list">
+        <li class="mobile-nav-item">
+          <a href="#about" class="mobile-nav-link" @click="scrollToSection('about')">About</a>
+        </li>
+        <li class="mobile-nav-item">
+          <router-link to="/travel" class="mobile-nav-link" @click="closeMobileMenu">Travel</router-link>
+        </li>
+        <li class="mobile-nav-item">
+          <router-link to="/fun-travels" class="mobile-nav-link" @click="closeMobileMenu">Fun Travels</router-link>
+        </li>
+        <li class="mobile-nav-item">
+          <router-link to="/contact" class="mobile-nav-link" @click="closeMobileMenu">Contact</router-link>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -272,6 +271,15 @@ onUnmounted(() => {
   max-width: 90vw;
   border: 1px solid rgba(100, 116, 139, 0.3);
   z-index: 10000;
+}
+
+@media (max-height: 600px) {
+  .mobile-nav {
+    justify-content: flex-start;
+    /* start from top */
+    padding-top: 4rem;
+    /* give space for header */
+  }
 }
 
 .mobile-nav-list {
