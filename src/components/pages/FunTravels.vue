@@ -42,7 +42,7 @@
       <!-- Main Content Section -->
       <div class="main-content flex flex-col lg:flex-row gap-12 mb-16">
         <!-- Left Side - Story and Image -->
-        <div class="story-section place-items-center lg:w-[60%]">
+        <div class="story-section grid place-items-center lg:w-[60%]">
           <div class="prose prose-lg text-gray-700 leading-relaxed mb-8">
             <p class="text-xl mb-6 text-gray-800 font-medium">
               Fun Travels was created out of a love for freedom, adventure, and making travel feel easy and exciting —
@@ -64,7 +64,7 @@
 
 
           <!-- Story Image -->
-          <div class="story-image rounded-2xl w-1/2 overflow-hidden shadow-xl ">
+          <div class="story-image rounded-2xl w-1/2 overflow-hidden shadow-xl">
             <img src="@/assets/fun-travels.jpg" alt="Fun Travels Logo" class="w-full h-full object-cover" />
           </div>
 
