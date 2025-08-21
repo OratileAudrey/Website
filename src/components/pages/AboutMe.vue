@@ -52,7 +52,9 @@
               <div
                 class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent transition-transform duration-300 group-hover:scale-110"
                 :class="{ 'animate-bounce': stat.isAnimating }">
-                {{ stat.value }}{{ stat.suffix }}
+                <span v-if="stat.value" class="font-bold">{{ stat.value }}</span>
+                <span v-else class="text-4xl font-bold">∞</span>
+                {{ stat.suffix }}
               </div>
               <div class="text-sm text-gray-600 font-medium">{{ stat.label }}</div>
             </div>
@@ -189,7 +191,7 @@ const particles = ref(
 const stats = ref([
   { label: 'Adventures', value: 20, suffix: '+', isAnimating: false },
   { label: 'Provinces', value: 9, suffix: '+', isAnimating: false },
-  { label: 'Memories', suffix: '♾️', isAnimating: false }
+  { label: 'Memories', suffix: '', isAnimating: false }
 ])
 
 // SVG Icons as functional components

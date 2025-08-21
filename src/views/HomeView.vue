@@ -4,7 +4,7 @@
     <section class="hero-video-section">
       <div class="hero-video-fixed">
         <video ref="videoRef" autoplay muted loop playsinline preload="metadata">
-          <source src="/videos/landing-video.mov" type="video/mp4" />
+          <source src="/videos/landing-video.mp4" type="video/mp4" />
         </video>
       </div>
 
